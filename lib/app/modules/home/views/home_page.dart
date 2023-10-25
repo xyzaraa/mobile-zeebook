@@ -42,7 +42,7 @@ class HomePage extends GetView<HomeController> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              "Search Book",
+                              "Search Movie",
                               style: TextStyle(
                                 color: Color(0xFFBABABA),
                               ),
@@ -88,10 +88,10 @@ class HomePage extends GetView<HomeController> {
                         color: Color(0xFFa6a5a5),
                       ),
                     ),
-                    Text("Comedy"),
-                    Text("Fantasy"),
+                    Text("K-Drama"),
+                    Text("Thriller"),
                     Text("Romance"),
-                    Text("Mystery"),
+                    Text("Horror"),
                   ],
                 ),
               ),
@@ -102,7 +102,7 @@ class HomePage extends GetView<HomeController> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Best Seller",
+                      "Best Movie",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -136,7 +136,7 @@ class HomePage extends GetView<HomeController> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10.0),
                                     child: Image.asset(
-                                      'assets/kissingbooth.jpg',
+                                      'assets/call.jpeg',
                                       width: 150,
                                       height: 250,
                                       fit: BoxFit.cover,
@@ -144,20 +144,20 @@ class HomePage extends GetView<HomeController> {
                                   ),
                                 ),
                                 const Text(
-                                  "Kissing Booth",
+                                  "The Call",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                   ),
                                 ),
                                 const Text(
-                                  "Beth Reekles",
+                                  "Bapakkau",
                                   style: TextStyle(
                                     color: Color(0xFFDADADA),
                                   ),
                                 ),
                                 Row(
-                                  children: List.generate(5, (index) {
+                                  children: List.generate(4, (index) {
                                     if (index < 5) {
                                       return const Icon(Icons.star,
                                           color: Colors.yellow);
@@ -179,7 +179,7 @@ class HomePage extends GetView<HomeController> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10.0),
                                 child: Image.asset(
-                                  'assets/itstartwithus.jpg',
+                                  'assets/maghrib.jpg',
                                   width: 150,
                                   height: 250,
                                   fit: BoxFit.cover,
@@ -187,20 +187,20 @@ class HomePage extends GetView<HomeController> {
                               ),
                             ),
                             const Text(
-                              "It Start With Us",
+                              "Waktu Maghrib",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
                             ),
                             const Text(
-                              "Colleen Hoover",
+                              "Mamakkau",
                               style: TextStyle(
                                 color: Color(0xFFDADADA),
                               ),
                             ),
                             Row(
-                              children: List.generate(4, (index) {
+                              children: List.generate(5, (index) {
                                 if (index < 5) {
                                   return const Icon(Icons.star,
                                       color: Colors.yellow);
@@ -220,7 +220,7 @@ class HomePage extends GetView<HomeController> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10.0),
                                 child: Image.asset(
-                                  'assets/invitationonly.jpg',
+                                  'assets/after.jpg',
                                   width: 150,
                                   height: 250,
                                   fit: BoxFit.cover,
@@ -228,14 +228,14 @@ class HomePage extends GetView<HomeController> {
                               ),
                             ),
                             const Text(
-                              "Invitation Only",
+                              "After Ever Happy",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
                             ),
                             const Text(
-                              "Cecilia Wang",
+                              "Bapakkau",
                               style: TextStyle(
                                 color: Color(0xFFDADADA),
                               ),
@@ -286,7 +286,7 @@ class HomePage extends GetView<HomeController> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/itendswithus.jpg',
+                              'assets/myname.jpg',
                               width: 105,
                               height: 190,
                               fit: BoxFit.cover,
@@ -294,18 +294,25 @@ class HomePage extends GetView<HomeController> {
                           ),
                         ),
                         const Text(
-                          "It Ends With Us",
+                          "My Name",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                        const Text(
-                          "Colleen Hoover",
-                          style: TextStyle(
-                            color: Color(0xFFDADADA),
-                          ),
-                        ),
+                        Row(
+                              children: List.generate(4, (index) {
+                                if (index < 5) {
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow,
+                                      size: 20.0,);
+                                      
+                                } else {
+                                  return const Icon(Icons.star_border,
+                                      color: Colors.yellow);
+                                }
+                              }),
+                            ),
                       ],
                     ),
                     Column(
@@ -316,7 +323,7 @@ class HomePage extends GetView<HomeController> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/onepiece.png',
+                              'assets/goblin.jpg',
                               width: 105,
                               height: 190,
                               fit: BoxFit.cover,
@@ -324,18 +331,25 @@ class HomePage extends GetView<HomeController> {
                           ),
                         ),
                         const Text(
-                          "One Piece",
+                          "Goblin",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                        const Text(
-                          "Eiichiro Oda",
-                          style: TextStyle(
-                            color: Color(0xFFDADADA),
-                          ),
-                        ),
+                         Row(
+                              children: List.generate(3, (index) {
+                                if (index < 5) {
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow,
+                                      size: 20.0,);
+                                      
+                                } else {
+                                  return const Icon(Icons.star_border,
+                                      color: Colors.yellow);
+                                }
+                              }),
+                            ),
                       ],
                     ),
                     Column(
@@ -344,25 +358,32 @@ class HomePage extends GetView<HomeController> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.0),
                           child: Image.asset(
-                            'assets/echoofoldbooks.jpg',
+                            'assets/mgig.jpg',
                             width: 105,
                             height: 190,
                             fit: BoxFit.cover,
                           ),
                         ),
                         const Text(
-                          "Echo of Old Books",
+                          "Gumiho",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                        const Text(
-                          "Barbara Davis",
-                          style: TextStyle(
-                            color: Color(0xFFDADADA),
-                          ),
-                        ),
+                         Row(
+                              children: List.generate(5, (index) {
+                                if (index < 5) {
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow,
+                                      size: 20.0,);
+                                      
+                                } else {
+                                  return const Icon(Icons.star_border,
+                                      color: Colors.yellow);
+                                }
+                              }),
+                            ),
                       ],
                     ),
                   ],
@@ -382,7 +403,7 @@ class HomePage extends GetView<HomeController> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/psistillloveyou.jpg',
+                              'assets/it.jpg',
                               width: 105,
                               height: 190,
                               fit: BoxFit.cover,
@@ -390,18 +411,25 @@ class HomePage extends GetView<HomeController> {
                           ),
                         ),
                         const Text(
-                          "I Still Love You",
+                          "IT",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                        const Text(
-                          "Jenny Han",
-                          style: TextStyle(
-                            color: Color(0xFFDADADA),
-                          ),
-                        ),
+                         Row(
+                              children: List.generate(2, (index) {
+                                if (index < 5) {
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow,
+                                      size: 20.0,);
+                                      
+                                } else {
+                                  return const Icon(Icons.star_border,
+                                      color: Colors.yellow);
+                                }
+                              }),
+                            ),
                       ],
                     ),
                     Column(
@@ -412,7 +440,7 @@ class HomePage extends GetView<HomeController> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/aot.jpeg',
+                              'assets/dots.jpg',
                               width: 105,
                               height: 190,
                               fit: BoxFit.cover,
@@ -420,18 +448,25 @@ class HomePage extends GetView<HomeController> {
                           ),
                         ),
                         const Text(
-                          "Attack on Titan",
+                          "Descendants",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                        const Text(
-                          "Hajime Isayama",
-                          style: TextStyle(
-                            color: Color(0xFFDADADA),
-                          ),
-                        ),
+                         Row(
+                              children: List.generate(4, (index) {
+                                if (index < 5) {
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow,
+                                      size: 20.0,);
+                                      
+                                } else {
+                                  return const Icon(Icons.star_border,
+                                      color: Colors.yellow);
+                                }
+                              }),
+                            ),
                       ],
                     ),
                     Column(
@@ -442,7 +477,7 @@ class HomePage extends GetView<HomeController> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/assasination.jpg',
+                              'assets/saw.jpg',
                               width: 105,
                               height: 190,
                               fit: BoxFit.cover,
@@ -450,18 +485,25 @@ class HomePage extends GetView<HomeController> {
                           ),
                         ),
                         const Text(
-                          "Assassination",
+                          "SAW",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                        const Text(
-                          "Yusei Matsui",
-                          style: TextStyle(
-                            color: Color(0xFFDADADA),
-                          ),
-                        ),
+                         Row(
+                              children: List.generate(3, (index) {
+                                if (index < 5) {
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow,
+                                      size: 20.0,);
+                                      
+                                } else {
+                                  return const Icon(Icons.star_border,
+                                      color: Colors.yellow);
+                                }
+                              }),
+                            ),
                       ],
                     ),
                   ],

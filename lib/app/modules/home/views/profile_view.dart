@@ -6,6 +6,13 @@ import 'package:second_process/app/modules/home/views/home_page.dart';
 import 'package:second_process/app/modules/home/views/review.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+class UserProfile {
+  final String username;
+  final String profilePicture;
+
+  UserProfile({required this.username, required this.profilePicture});
+}
+
 class ProfileView extends GetView<HomeController> {
   const ProfileView({Key? key}) : super(key: key);
 

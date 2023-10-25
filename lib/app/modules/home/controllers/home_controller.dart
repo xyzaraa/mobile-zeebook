@@ -1,18 +1,25 @@
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:second_process/app/modules/home/models/profile_models.dart'; // Import the UserProfile model
 
 class HomeController extends GetxController {
-  var selectedIndex = 0.obs; //for navbar
-  final _image = Rx<XFile?>(null); //file image picker
+  var selectedIndex = 0.obs; // for navbar
+  final _image = Rx<XFile?>(null); // file image picker
   RxString imagePath = "".obs;
 
-  //navbar logic
+  // Add a variable to store the user's profile
+  var userProfile = UserProfile(
+    username: "User", // Initial username
+    profilePicture: "assets/profile.jpg", // Initial profile picture
+  ).obs;
+
+  // Navbar logic
   void onItemTapped(int index) {
     selectedIndex.value = index;
   }
 
   XFile? get image => _image.value;
-  
+
   Future<void> pickImage() async {
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (image != null) {
@@ -26,6 +33,4 @@ class HomeController extends GetxController {
       _image.value = XFile(image.path);
     }
   }
-
 }
- 

@@ -7,7 +7,7 @@ import 'app/routes/app_pages.dart';
 void main() async {
   runApp(
     GetMaterialApp(
-      title: "Zeebook",
+      title: "ZeeMovie",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,

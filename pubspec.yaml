@@ -25,17 +25,16 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - assets/invitationonly.jpg
-    - assets/itstartwithus.jpg
-    - assets/kissingbooth.jpg
-    - assets/echoofoldbooks.jpg
-    - assets/itendswithus.jpg
-    - assets/psistillloveyou.jpg
-    - assets/lotr.jpg
-    - assets/assasination.jpg
-    - assets/onepiece.png
-    - assets/aot.jpeg
     - assets/chevronleft.png
     - assets/bookmark.png
     - assets/profile.jpg
+    - assets/myname.jpg
+    - assets/goblin.jpg
+    - assets/mgig.jpg
+    - assets/it.jpg
+    - assets/dots.jpg
+    - assets/saw.jpg
+    - assets/after.jpg
+    - assets/maghrib.jpg
+    - assets/call.jpeg
 
