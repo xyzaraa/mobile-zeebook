@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:second_process/app/modules/home/controllers/api_controller.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,48 +17,28 @@ class MyApp extends StatelessWidget {
 }
 
 class fromApi extends StatelessWidget {
-  Future<Map<String, dynamic>> _loadApis() async {
-    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/5'));
-
-    if (response.statusCode == 200) {
-      final jsonString = response.body;
-      final jsonData = json.decode(jsonString);
-      return jsonData;
-    } else {
-      throw Exception('Failed to load data');
-    }
-  }
+  final ApiController apiController = Get.put(ApiController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: FutureBuilder<Map<String, dynamic>>(
-        future: _loadApis(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+      body: Center(
+        child: Obx(() {
+          if (apiController.jsonData.isEmpty) {
+            return CircularProgressIndicator();
           } else {
-            if (snapshot.hasData) {
-              final data = snapshot.data!;
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('User ID: ${data['userId']}'),
-                    Text('ID: ${data['id']}'),
-                    Text('Title: ${data['title']}'),
-                    Text('Completed: ${data['completed']}'),
-                  ],
-                ),
-              );
-            } else {
-              return Center(child: Text('No data available'));
-            }
+            final data = apiController.jsonData;
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('User ID: ${data['userId']}'),
+                Text('ID: ${data['id']}'),
+                Text('Title: ${data['title']}'),
+                Text('Completed: ${data['completed']}'),
+              ],
+            );
           }
-        },
+        }),
       ),
     );
   }
