@@ -1,4 +1,4 @@
-# zeebook_mobile
+# zeemovie_mobile
 
 A new Flutter project, but I'm not new to feeling stressed out.
 
