@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-import 'package:second_process/app/modules/home/controllers/home_controller.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,22 +13,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
-class fromApi extends GetView<HomeController>  {
-  Future<List<Map<String, dynamic>>> _loadApis() async {
+class fromApi extends StatelessWidget {
+  Future<Map<String, dynamic>> _loadApis() async {
     final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/5'));
 
     if (response.statusCode == 200) {
       final jsonString = response.body;
       final jsonData = json.decode(jsonString);
-      List<Map<String, dynamic>> resultApi = [];
-
-      for (var key in jsonData.keys) {
-        resultApi.add({key: jsonData[key]});
-      }
-
-      return resultApi;
+      return jsonData;
     } else {
       throw Exception('Failed to load data');
     }
@@ -43,18 +32,18 @@ class fromApi extends GetView<HomeController>  {
       appBar: AppBar(
         title: Text('JSON Data Example'),
       ),
-      body: Center(
-        child: FutureBuilder<List<Map<String, dynamic>>>(
-          future: _loadApis(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
-            } else if (snapshot.hasError) {
-              return Text('Error: ${snapshot.error}');
-            } else {
-              if (snapshot.hasData) {
-                final data = snapshot.data![0];
-                return Column(
+      body: FutureBuilder<Map<String, dynamic>>(
+        future: _loadApis(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else {
+            if (snapshot.hasData) {
+              final data = snapshot.data!;
+              return Center(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('User ID: ${data['userId']}'),
@@ -62,13 +51,13 @@ class fromApi extends GetView<HomeController>  {
                     Text('Title: ${data['title']}'),
                     Text('Completed: ${data['completed']}'),
                   ],
-                );
-              } else {
-                return Text('No data available');
-              }
+                ),
+              );
+            } else {
+              return Center(child: Text('No data available'));
             }
-          },
-        ),
+          }
+        },
       ),
     );
   }
