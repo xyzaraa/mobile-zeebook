@@ -29,9 +29,7 @@ class fromApi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('JSON Data Example'),
-      ),
+
       body: FutureBuilder<Map<String, dynamic>>(
         future: _loadApis(),
         builder: (context, snapshot) {
