@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:second_process/app/modules/home/views/profile_view.dart';
 import 'package:second_process/app/modules/home/views/review.dart';
 import '../controllers/home_controller.dart';
+import 'dart:io';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
@@ -54,12 +55,23 @@ class HomePage extends GetView<HomeController> {
                       width: 75,
                       height: 75,
                       child: ClipOval(
-                        child: Image.asset(
-                          'assets/profile.jpg',
-                          width: 75,
-                          height: 75,
-                          fit: BoxFit.cover,
-                        ),
+                        child: Obx(() {
+                          if (controller.image != null) {
+                            return Image.file(
+                              File(controller.image!.path),
+                              width: 135,
+                              height: 135,
+                              fit: BoxFit.cover,
+                            );
+                          } else {
+                            return Image.asset(
+                              'assets/profile.jpg',
+                              width: 135,
+                              height: 135,
+                              fit: BoxFit.cover,
+                            );
+                          }
+                        }),
                       ),
                     )
                   ],
@@ -190,7 +202,8 @@ class HomePage extends GetView<HomeController> {
                             Row(
                               children: List.generate(4, (index) {
                                 if (index < 5) {
-                                  return const Icon(Icons.star, color: Colors.yellow);
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow);
                                 } else {
                                   return const Icon(Icons.star_border,
                                       color: Colors.yellow);
@@ -230,7 +243,8 @@ class HomePage extends GetView<HomeController> {
                             Row(
                               children: List.generate(3, (index) {
                                 if (index < 5) {
-                                  return const Icon(Icons.star, color: Colors.yellow);
+                                  return const Icon(Icons.star,
+                                      color: Colors.yellow);
                                 } else {
                                   return const Icon(Icons.star_border,
                                       color: Colors.yellow);
@@ -490,12 +504,10 @@ class HomePage extends GetView<HomeController> {
               } else if (index == 2) {
                 controller.selectedIndex.value = 2;
                 Get.to(() => const ProfileView());
-              }
-              else if (index == 3) {
+              } else if (index == 3) {
                 controller.selectedIndex.value = 3;
                 Get.to(() => const ProfileView());
-              }
-              else {
+              } else {
                 controller.onItemTapped(index);
               }
             },

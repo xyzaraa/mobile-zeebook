@@ -107,7 +107,7 @@ class ProfileView extends GetView<HomeController> {
             const SizedBox(height: 10),
 //menu under profile
             ListTile(
-              contentPadding: EdgeInsets.only(left: 45, right: 45),
+              contentPadding: const EdgeInsets.only(left: 45, right: 45),
               leading: Container(
                 width: 40,
                 height: 40,
@@ -116,14 +116,14 @@ class ProfileView extends GetView<HomeController> {
                   color:
                       const Color.fromARGB(255, 225, 170, 87).withOpacity(0.1),
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     FontAwesomeIcons.pen,
-                    color: const Color.fromARGB(255, 225, 170, 87),
+                    color: Color.fromARGB(255, 225, 170, 87),
                   ),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Edit Profile',
                 style: TextStyle(
                   fontSize: 16, // Ganti sesuai kebutuhan
@@ -131,7 +131,7 @@ class ProfileView extends GetView<HomeController> {
                 ),
               ),
               trailing: Container(
-                child: Icon(
+                child: const Icon(
                   FontAwesomeIcons.chevronRight,
                   size: 18.0,
                   color: Color.fromARGB(255, 179, 176, 172),
@@ -139,7 +139,7 @@ class ProfileView extends GetView<HomeController> {
               ),
             ),
             ListTile(
-              contentPadding: EdgeInsets.only(top:10, left: 45, right: 45),
+              contentPadding: const EdgeInsets.only(top:10, left: 45, right: 45),
               leading: Container(
                 width: 40,
                 height: 40,
@@ -148,14 +148,14 @@ class ProfileView extends GetView<HomeController> {
                   color:
                       const Color.fromARGB(255, 225, 170, 87).withOpacity(0.1),
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     FontAwesomeIcons.clockRotateLeft,
-                    color: const Color.fromARGB(255, 225, 170, 87),
+                    color: Color.fromARGB(255, 225, 170, 87),
                   ),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Your Activity',
                 style: TextStyle(
                   fontSize: 16, // Ganti sesuai kebutuhan
@@ -163,7 +163,7 @@ class ProfileView extends GetView<HomeController> {
                 ),
               ),
               trailing: Container(
-                child: Icon(
+                child: const Icon(
                   FontAwesomeIcons.chevronRight,
                   size: 18.0,
                   color: Color.fromARGB(255, 179, 176, 172),
@@ -171,7 +171,7 @@ class ProfileView extends GetView<HomeController> {
               ),
             ),
             ListTile(
-              contentPadding: EdgeInsets.only(top: 10, left: 45, right: 45),
+              contentPadding: const EdgeInsets.only(top: 10, left: 45, right: 45),
               leading: Container(
                 width: 40,
                 height: 40,
@@ -180,14 +180,14 @@ class ProfileView extends GetView<HomeController> {
                   color:
                       const Color.fromARGB(255, 225, 170, 87).withOpacity(0.1),
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     FontAwesomeIcons.wallet,
-                    color: const Color.fromARGB(255, 225, 170, 87),
+                    color: Color.fromARGB(255, 225, 170, 87),
                   ),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Purchased Books',
                 style: TextStyle(
                   fontSize: 16, // Ganti sesuai kebutuhan
@@ -195,7 +195,7 @@ class ProfileView extends GetView<HomeController> {
                 ),
               ),
               trailing: Container(
-                child: Icon(
+                child: const Icon(
                   FontAwesomeIcons.chevronRight,
                   size: 18.0,
                   color: Color.fromARGB(255, 179, 176, 172),
@@ -207,7 +207,7 @@ class ProfileView extends GetView<HomeController> {
             const SizedBox(height: 15),
 
             ListTile(
-              contentPadding: EdgeInsets.only(top: 10, left: 45, right: 45),
+              contentPadding: const EdgeInsets.only(top: 10, left: 45, right: 45),
               leading: Container(
                 width: 40,
                 height: 40,
@@ -216,14 +216,14 @@ class ProfileView extends GetView<HomeController> {
                   color:
                       const Color.fromARGB(255, 225, 170, 87).withOpacity(0.1),
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     FontAwesomeIcons.gear,
-                    color: const Color.fromARGB(255, 225, 170, 87),
+                    color: Color.fromARGB(255, 225, 170, 87),
                   ),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Settings',
                 style: TextStyle(
                   fontSize: 16, // Ganti sesuai kebutuhan
@@ -231,7 +231,7 @@ class ProfileView extends GetView<HomeController> {
                 ),
               ),
               trailing: Container(
-                child: Icon(
+                child: const Icon(
                   FontAwesomeIcons.chevronRight,
                   size: 18.0,
                   color: Color.fromARGB(255, 179, 176, 172),
@@ -239,7 +239,7 @@ class ProfileView extends GetView<HomeController> {
               ),
             ),
             ListTile(
-              contentPadding: EdgeInsets.only(top: 10, left: 45, right: 45),
+              contentPadding: const EdgeInsets.only(top: 10, left: 45, right: 45),
               leading: Container(
                 width: 40,
                 height: 40,
@@ -248,14 +248,14 @@ class ProfileView extends GetView<HomeController> {
                   color:
                       const Color.fromARGB(255, 225, 170, 87).withOpacity(0.1),
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     FontAwesomeIcons.rightFromBracket,
-                    color: const Color.fromARGB(255, 225, 170, 87),
+                    color: Color.fromARGB(255, 225, 170, 87),
                   ),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Log Out',
                 style: TextStyle(
                   fontSize: 16, // Ganti sesuai kebutuhan
@@ -263,7 +263,7 @@ class ProfileView extends GetView<HomeController> {
                 ),
               ),
               trailing: Container(
-                child: Icon(
+                child: const Icon(
                   FontAwesomeIcons.chevronRight,
                   size: 18.0,
                   color: Color.fromARGB(255, 179, 176, 172),
