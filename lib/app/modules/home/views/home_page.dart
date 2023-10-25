@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:second_process/app/modules/home/views/article_page.dart';
 import 'package:second_process/app/modules/home/views/profile_view.dart';
 import 'package:second_process/app/modules/home/views/review.dart';
+import 'package:second_process/app/modules/home/views/article_page.dart';
 import '../controllers/home_controller.dart';
 import 'dart:io';
 
