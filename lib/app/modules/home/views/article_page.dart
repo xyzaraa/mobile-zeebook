@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 import 'package:second_process/app/modules/home/controllers/api_controller.dart';
 
 void main() {
@@ -10,7 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp( 
       home: fromApi(),
     );
   }
@@ -25,6 +24,7 @@ class fromApi extends StatelessWidget {
       body: Center(
         child: Obx(() {
           if (apiController.jsonData.isEmpty) {
+            apiController.fetchData(); 
             return CircularProgressIndicator();
           } else {
             final data = apiController.jsonData;
