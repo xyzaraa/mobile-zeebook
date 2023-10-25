@@ -1,14 +1,15 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:second_process/app/modules/home/views/article_page.dart';
 import 'package:second_process/app/modules/home/views/profile_view.dart';
 import 'package:second_process/app/modules/home/views/review.dart';
-import 'package:second_process/app/modules/home/views/article_page.dart';
 import '../controllers/home_controller.dart';
 import 'dart:io';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +79,9 @@ class HomePage extends GetView<HomeController> {
                     )
                   ],
                 ),
+
+              
+
               ),
               Container(
                 padding: const EdgeInsets.all(16.0),
@@ -547,7 +551,7 @@ class HomePage extends GetView<HomeController> {
                 Get.to(() => const Review());
               } else if (index == 2) {
                 controller.selectedIndex.value = 2;
-                Get.to(() => const ProfileView());
+                Get.to(() => fromApi());
               } else if (index == 3) {
                 controller.selectedIndex.value = 3;
                 Get.to(() => const ProfileView());
