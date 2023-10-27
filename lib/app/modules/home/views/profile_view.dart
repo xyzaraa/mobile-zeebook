@@ -306,7 +306,7 @@ class ProfileView extends GetView<HomeController> {
             onTap: (index) {
               if (index == 0) {
                 controller.selectedIndex.value = 0;
-                Get.to(() => const HomePage());
+                Get.to(() => HomePage());
               } else if (index == 1) {
                 controller.selectedIndex.value = 1;
                 Get.to(() => const Review());
