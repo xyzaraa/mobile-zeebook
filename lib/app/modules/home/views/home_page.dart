@@ -227,7 +227,7 @@ class HomePage extends GetView<HomeController> {
                                   Text(
                                     movie['director'] ?? '',
                                     style: TextStyle(
-                                      color: Color(0xFFDADADA),
+                                      color: Color.fromARGB(255, 83, 83, 83),
                                     ),
                                   ),
                                   Row(
@@ -320,7 +320,7 @@ class HomePage extends GetView<HomeController> {
                                   Text(
                                     movie['director'] ?? '',
                                     style: TextStyle(
-                                      color: Color(0xFFDADADA),
+                                      color: Color.fromARGB(255, 83, 83, 83),
                                     ),
                                   ),
                                   Row(
@@ -413,7 +413,7 @@ class HomePage extends GetView<HomeController> {
                                   Text(
                                     movie['director'] ?? '',
                                     style: TextStyle(
-                                      color: Color(0xFFDADADA),
+                                      color: Color.fromARGB(255, 83, 83, 83),
                                     ),
                                   ),
                                   Row(
@@ -504,12 +504,11 @@ class HomePage extends GetView<HomeController> {
                                     ),
                                   ),
                                   Text(
-                                    movie['total_episode'] ?? '',
+                                    "Total Eps ${movie['total_episode'] ?? ''}",
                                     style: TextStyle(
-                                      color: Color(0xFFDADADA),
+                                      color: Color.fromARGB(255, 83, 83, 83),
                                     ),
                                   ),
-                                  
                                 ],
                               ),
                             ],
