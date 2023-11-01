@@ -50,7 +50,7 @@ class Review extends GetView<HomeController> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image.asset(
-                          'assets/itendswithus.jpg',
+                          'assets/goblin.jpg',
                           width: 150,
                           height: 210,
                           fit: BoxFit.cover,

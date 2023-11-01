@@ -1,11 +1,12 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:second_process/app/modules/home/controllers/home_controller.dart';
 import 'dart:convert';
-import 'package:second_process/app/modules/home/views/article_page.dart';
 import 'package:second_process/app/modules/home/views/profile_view.dart';
 import 'package:second_process/app/modules/home/views/review.dart';
+import 'package:second_process/app/modules/home/views/webv_page.dart';
 
 class HomePage extends GetView<HomeController> {
   Future<List<Map<String, dynamic>>> fetchMovies() async {
@@ -146,17 +147,28 @@ class HomePage extends GetView<HomeController> {
                     ),
                   ),
                   SizedBox(
-                    width: 75,
-                    height: 75,
-                    child: ClipOval(
-                      child: Image.asset(
-                        'assets/profile.jpg',
-                        width: 135,
-                        height: 135,
-                        fit: BoxFit.cover,
+                      width: 75,
+                      height: 75,
+                      child: ClipOval(
+                        child: Obx(() {
+                          if (controller.image != null) {
+                            return Image.file(
+                              File(controller.image!.path),
+                              width: 135,
+                              height: 135,
+                              fit: BoxFit.cover,
+                            );
+                          } else {
+                            return Image.asset(
+                              'assets/profile.jpg',
+                              width: 135,
+                              height: 135,
+                              fit: BoxFit.cover,
+                            );
+                          }
+                        }),
                       ),
                     ),
-                  ),
                 ],
               ),
             ),
@@ -556,7 +568,7 @@ class HomePage extends GetView<HomeController> {
                 Get.to(() => const Review());
               } else if (index == 2) {
                 controller.selectedIndex.value = 2;
-                Get.to(() => fromApi());
+                Get.to(() => WebviewPage());
               } else if (index == 3) {
                 controller.selectedIndex.value = 3;
                 Get.to(() => const ProfileView());
