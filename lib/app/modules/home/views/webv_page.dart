@@ -3,7 +3,6 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:get/get.dart';
 import 'package:second_process/app/modules/home/controllers/home_controller.dart';
 
-void main() => runApp(WebviewPage());
 
 class WebviewPage extends GetView<HomeController> {
   const WebviewPage({Key? key}) : super(key: key);
@@ -13,9 +12,9 @@ class WebviewPage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Webview Example',
+      title: 'ZeePlayer',
       home: WebviewScaffold(
-        url: this.url,
+        url: url,
         withZoom: true,
         withLocalStorage: true,
       ),
