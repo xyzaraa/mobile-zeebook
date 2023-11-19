@@ -5,6 +5,8 @@ import 'package:second_process/app/modules/home/controllers/home_controller.dart
 import 'package:second_process/app/modules/home/views/home_page.dart';
 import 'package:second_process/app/modules/home/views/review.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:second_process/app/modules/home/controllers/auth_controller.dart';
+
 
 class UserProfile {
   final String username;
@@ -246,26 +248,10 @@ class ProfileView extends GetView<HomeController> {
               ),
             ),
             ListTile(
-              contentPadding: const EdgeInsets.only(top: 10, left: 45, right: 45),
-              leading: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color:
-                      const Color.fromARGB(255, 225, 170, 87).withOpacity(0.1),
-                ),
-                child: const Center(
-                  child: Icon(
-                    FontAwesomeIcons.rightFromBracket,
-                    color: Color.fromARGB(255, 225, 170, 87),
-                  ),
-                ),
-              ),
               title: const Text(
                 'Log Out',
                 style: TextStyle(
-                  fontSize: 16, // Ganti sesuai kebutuhan
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -276,6 +262,9 @@ class ProfileView extends GetView<HomeController> {
                   color: Color.fromARGB(255, 179, 176, 172),
                 ),
               ),
+              onTap: () {
+                AuthController().logout(); 
+              },
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:second_process/app/modules/home/controllers/auth_controller.dart';
+import 'package:second_process/app/modules/home/views/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -53,6 +54,18 @@ class _LoginPageState extends State<LoginPage> {
                 child: _authController.isLoading.value
                     ? CircularProgressIndicator()
                     : Text('Login'),
+              );
+            }),
+            Obx(() {
+              return ElevatedButton(
+                onPressed: _authController.isLoading.value
+                    ? null
+                    : () {
+                      Get.off(RegisterPage());
+                      },
+                child: _authController.isLoading.value
+                    ? CircularProgressIndicator()
+                    : Text('Register'),
               );
             }),
           ],
