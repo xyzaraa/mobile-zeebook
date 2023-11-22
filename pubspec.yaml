@@ -17,8 +17,10 @@ dependencies:
   http: ^1.1.0
   webview_flutter: ^4.4.1
   flutter_webview_plugin: ^0.4.0
-  firebase_core: ^2.22.0
+  firebase_core: ^2.23.0
   firebase_auth: ^4.14.0
+  firebase_messaging: ^14.7.5
+  rxdart: ^0.27.7
 
 
 dev_dependencies: 
