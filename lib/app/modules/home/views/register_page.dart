@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:second_process/app/modules/home/controllers/auth_controller.dart';
 import 'package:second_process/app/modules/home/views/login_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
+final GoogleSignIn _googleSignIn = GoogleSignIn();
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -18,6 +23,24 @@ class _RegisterPageState extends State<RegisterPage> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  Future<void> _signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount!.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleSignInAuthentication.accessToken,
+        idToken: googleSignInAuthentication.idToken,
+      );
+
+      await _auth.signInWithCredential(credential);
+    } catch (error) {
+      print('Error signing in with Google: $error');
+    }
   }
 
   @override
@@ -71,7 +94,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     : Text('Register'),
               );
             }),
-            SizedBox(height: 8), // Tambahkan sedikit jarak antara tombol register dan login
+            SizedBox(
+                height:
+                    8), // Tambahkan sedikit jarak antara tombol register dan login
             Obx(() {
               return ElevatedButton(
                 onPressed: _authController.isLoading.value
@@ -90,6 +115,19 @@ class _RegisterPageState extends State<RegisterPage> {
                     : Text('Login'),
               );
             }),
+            SizedBox(height: 8),
+            ElevatedButton(
+              onPressed: () {
+                _authController.signInWithGoogle();
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue, // Ubah warna sesuai keinginan Anda
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              child: Text('Sign In with Google'),
+            ),
           ],
         ),
       ),

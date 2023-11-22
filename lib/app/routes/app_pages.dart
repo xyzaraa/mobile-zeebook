@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:second_process/app/modules/home/views/login_page.dart';
 // import 'package:second_process/app/modules/home/views/home_page.dart';
 import 'package:second_process/app/modules/home/views/profile_view.dart';
-import 'package:second_process/app/modules/home/views/register_page.dart';
+// import 'package:second_process/app/modules/home/views/register_page.dart';
 
 
 import '../modules/home/bindings/home_binding.dart';
