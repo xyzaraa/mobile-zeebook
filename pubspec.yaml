@@ -6,6 +6,7 @@ environment:
   sdk: '>=3.1.2 <4.0.0'
 
 dependencies: 
+  appwrite : ^11.0.0
   cupertino_icons: ^1.0.2
   get: 4.6.6
   flutter: 
@@ -14,7 +15,7 @@ dependencies:
   flutter_image_compress: ^2.0.4
   image_cropper: ^5.0.0
   font_awesome_flutter: ^10.6.0
-  http: ^1.1.0
+  http: 1.0.0
   webview_flutter: ^4.4.1
   flutter_webview_plugin: ^0.4.0
   firebase_core: ^2.23.0

@@ -8,6 +8,7 @@ import 'package:second_process/app/modules/home/views/profile_view.dart';
 import 'package:second_process/app/modules/home/views/review.dart';
 import 'package:second_process/app/modules/home/views/webv_page.dart';
 
+
 class HomePage extends GetView<HomeController> {
   Future<List<Map<String, dynamic>>> fetchMovies() async {
     final response = await http.get(
